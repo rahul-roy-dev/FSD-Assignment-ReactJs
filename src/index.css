@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.delayed {
+  animation: cssAnimation 0s 5s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to {
+    visibility: visible;
+  }
+}
+
+header {
+  z-index: 999 !important;
+}
+
+#nav-wrapper {
+  background-color: hsla(0, 0%, 100%, 0.92);
+}
+
+#hero {
+  background-image: none;
+}
+
+/* Slider */
+
+.slide-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  align-items: center;
+}
+
+.slide-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.slide-text h1 {
+  font-size: 2.7vw;
+  font-weight: 700;
+  color: #333333;
+  line-height: 2;
+  text-transform: capitalize;
+}
+
+.slide-text p {
+  font-size: 3vw;
+}
+
+.slide-text button {
+  width: 150px;
+  margin-top: 20px;
+}
+
+.slide-wrapper .img-wrapper {
+  padding-left: 0%;
+  background-size: contain;
+  width: auto;
+  max-height: 200px;
+  height: 400px;
+}
+
+.slide-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#companies div {
+  padding: 20px;
+}
+#client img,
+#partner img {
+  width: 150px;
+}
+
+@media (min-width: 768px) {
+  .slide-text p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-image: url("../src/assets/Hero.png");
+    background-repeat: no-repeat;
+    background-size: 100% 90%;
+    background-position-y: 45%;
+    background-position-x: 0%;
+  }
+
+  .slide-wrapper {
+    flex-direction: row-reverse;
+    padding: 0 80px;
+  }
+
+  .slide-wrapper .img-wrapper {
+    padding-left: 20%;
+    background-size: contain;
+    width: 70%;
+    max-height: 70%;
+  }
+
+  .slide-text {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+/* Loader */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
